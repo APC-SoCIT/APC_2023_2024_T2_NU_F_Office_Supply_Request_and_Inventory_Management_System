@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AAJdbController</name>
+    </assembly>
+    <members>
+        <member name="T:AAJdbController.DatabaseType">
+            <summary>
+            Select database type
+            </summary>
+        </member>
+        <member name="F:AAJdbController.DatabaseType.SQLServer">
+            <summary>
+            For SQL Server Only
+            </summary>
+        </member>
+        <member name="F:AAJdbController.DatabaseType.OleDb">
+            <summary>
+            For OLEDB Only
+            </summary>
+        </member>
+        <member name="T:AAJdbController.P">
+            <summary>
+            Use For parameter
+            </summary>
+        </member>
+        <member name="P:AAJdbController.P.GetLastID">
+            <summary>
+            Get the last ID inserted in MS Access, FOR OLEDB ONLY!
+            </summary>
+        </member>
+        <member name="P:AAJdbController.P.RecordCount">
+            <summary>
+            Get the total record retrieve.
+            </summary>
+        </member>
+        <member name="P:AAJdbController.P.Exception">
+            <summary>
+            Get the exception
+            </summary>
+        </member>
+        <member name="P:AAJdbController.P.HasException">
+            <summary>
+            Determine if there was an exception in execution
+            </summary>
+        </member>
+        <member name="P:AAJdbController.P.da">
+            <summary>
+            Data Adapter for SQL Server
+            </summary>
+        </member>
+        <member name="F:AAJdbController.P.oledbda">
+            <summary>
+            Data Adapter for OleDb
+            </summary>
+        </member>
+        <member name="P:AAJdbController.P.dt">
+            <summary>
+            DataTable to be filled
+            </summary>
+        </member>
+        <member name="T:AAJdbController.ErrorMessage">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="P:AAJdbController.ErrorMessage.ExceptionMessage">
+            <summary>
+            Get the error message
+            </summary>
+        </member>
+        <member name="T:AAJdbController.Tools">
+            <summary>
+            This is use for canceling a Query if the condition doesn't meet the requirement.
+            </summary>
+        </member>
+        <member name="P:AAJdbController.Tools.Cancel">
+            <summary>
+            Set to true if you don't want to execute the Query in a certain condition.
+            </summary>
+        </member>
+        <member name="M:AAJdbController.Tools.#ctor(System.Boolean)">
+            <summary>
+            Second Instance with parameter
+            </summary>
+            <param name="cancel"></param>
+        </member>
+        <member name="M:AAJdbController.Tools.#ctor">
+            <summary>
+            New Instance
+            </summary>
+        </member>
+        <member name="T:AAJdbController.AAJControl">
+            <summary>
+            The Type to be use in all operation
+            </summary>
+        </member>
+        <member name="T:AAJdbController.AAJControl.Error">
+            <summary>
+            Delegate for Error Message
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:AAJdbController.AAJControl.ErrorOccured">
+            <summary>
+            Error Event for Error Message
+            </summary>
+        </member>
+        <member name="T:AAJdbController.AAJControl.beforeExecute">
+            <summary>
+            Delegate for Before executing a query
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="E:AAJdbController.AAJControl.BeforeExecute">
+            <summary>
+            Event before executing a query
+            </summary>
+        </member>
+        <member name="M:AAJdbController.AAJControl.#ctor(AAJdbController.DatabaseType,System.String)">
+            <summary>
+            New instance of object
+            You can send your Donation if you like my Creation :)
+            https://www.paypal.com/paypalme/adrianjaspio
+            </summary>
+            <param name="_dbtype">Select the database type</param>
+            <param name="_connectionstring">Connectionstring</param>
+        </member>
+        <member name="M:AAJdbController.AAJControl.#ctor">
+            <summary>
+            New Instance
+            </summary>
+        </member>
+        <member name="M:AAJdbController.AAJControl.Query(System.String,System.Action{AAJdbController.P},System.Data.CommandType)">
+            <summary>
+            Function to be used for executing a query
+            </summary>
+            <param name="_command">SQL Query</param>
+            <param name="_data">parameter here e.g Query("QueryString", p => { p.Add("@Parameter", value); })</param>
+            <param name="_type">For SQL Server only | Select CommandType | Default is CommandType.Text</param>
+            <returns></returns>
+        </member>
+        <member name="M:AAJdbController.AAJControl.Table(System.String,System.Action{AAJdbController.P},System.Data.CommandType)">
+            <summary>
+            Function to be used for executing query
+            </summary>
+            <param name="_command">SQL Query</param>
+            <param name="_data">parameter here e.g Query("QueryString", p => { p.Add("@Parameter", value); })</param>
+            <param name="_type">For SQL Server only | Select CommandType | Default is CommandType.Text</param>
+            <returns></returns>
+        </member>
+        <member name="M:AAJdbController.AAJControl.Insert(System.String,System.Action{AAJdbController.P})">
+            <summary>
+            Method to be use for inserting data to database Table
+            </summary>
+            <param name="Table">table name</param>
+            <param name="_Data">table column and value e.g Insert("TableName", p => { p.Add("ColumnName", Value); })</param>
+        </member>
+        <member name="M:AAJdbController.AAJControl.Insert(System.String,System.Action{AAJdbController.P},System.Boolean)">
+            <summary>
+            Insert Data to database
+            </summary>
+            <param name="Table">Table of database</param>
+            <param name="_Data">table column and value e.g Insert("TableName", p => { p.Add("ColumnName", Value); })</param>
+            <param name="GetLastID">For OleDb Only</param>
+        </member>
+        <member name="M:AAJdbController.AAJControl.Update(System.String,System.Action{AAJdbController.P,AAJdbController.AAJControl.UpdateCondition})">
+            <summary>
+            Method to be use for updating data to database Table
+            </summary>
+            <param name="Table">table name</param>
+            <param name="_Data">table column and value e.g Update("TableName", (p,c) => { p.Add("ColumnName", Value); c.Where("ColumnName", Value); })</param>
+        </member>
+        <member name="M:AAJdbController.AAJControl.Update(System.String,System.Int32,System.Action{AAJdbController.P})">
+            <summary>
+            Update table data with the WHERE Clause ID
+            </summary>
+            <param name="Table">name of table to be update</param>
+            <param name="ID">ID to be update</param>
+            <param name="_data">columns to be updated</param>
+        </member>
+        <member name="M:AAJdbController.AAJControl.GetTableScheme(System.String)">
+            <summary>
+            Get the scheme of a table
+            </summary>
+            <param name="table">Table name</param>
+            <returns></returns>
+        </member>
+        <member name="T:AAJdbController.AAJControl.UpdateCondition">
+            <summary>
+            Class for Update method
+            </summary>
+        </member>
+        <member name="M:AAJdbController.AAJControl.UpdateCondition.Where(System.String,System.Object)">
+            <summary>
+            Function to be used for adding a where clause
+            </summary>
+            <param name="Column">Column name</param>
+            <param name="Value">Column value</param>
+            <returns></returns>
+        </member>
+        <member name="T:AAJdbController.AAJ">
+            <summary>
+            Inheritable for easy binding of Object Class and DataTable
+            </summary>
+        </member>
+        <member name="M:AAJdbController.AAJ.#ctor">
+            <summary>
+            Empty Instance
+            </summary>
+        </member>
+        <member name="M:AAJdbController.AAJ.#ctor(System.Data.DataRow)">
+            <summary>
+            Used for binding Class object properties and DataTable value
+            e.g Sample(DataRow r) : base(r) {  }
+            </summary>
+            <param name="r">Pass DataRow here.</param>
+        </member>
+        <member name="M:AAJdbController.AAJ.ConvertListToDataTable``1(System.Collections.Generic.List{``0},System.String[])">
+            <summary>
+            Convert List To DataTable.
+            Usefull in 1 to many relationship.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="objects">List of Object</param>
+            <param name="column">Optional if you want to select specific column.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
