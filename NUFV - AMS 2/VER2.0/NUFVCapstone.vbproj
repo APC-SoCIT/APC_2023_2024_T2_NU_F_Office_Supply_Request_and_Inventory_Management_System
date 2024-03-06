@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22B04C81-CD89-4F61-897E-EB217ACC043B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>LoginandPassword.My.MyApplication</StartupObject>
+    <RootNamespace>LoginandPassword</RootNamespace>
+    <AssemblyName>LoginandPassword</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LoginandPassword.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LoginandPassword.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AAJdbController, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AAJControl.1.0.15\lib\net45\AAJdbController.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.95.3\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\Downloads\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OleDb, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.OleDb.7.0.0\lib\net462\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Z.Dapper.Plus, Version=4.0.39.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>packages\Z.Dapper.Plus.4.0.39\lib\net45\Z.Dapper.Plus.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting_Approver_dashboard.Designer.vb">
+      <DependentUpon>Accounting_Approver_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting_Approver_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting_ReqTracApprover.Designer.vb">
+      <DependentUpon>Accounting_ReqTracApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting_ReqTracApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting_ReqTracClicked.Designer.vb">
+      <DependentUpon>Accounting_ReqTracClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting_ReqTracClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting_ReqTracClicked_Approver.Designer.vb">
+      <DependentUpon>Accounting_ReqTracClicked_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting_ReqTracClicked_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting_RequestTracker.Designer.vb">
+      <DependentUpon>Accounting_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminClient_ReqTracClicked.Designer.vb">
+      <DependentUpon>AdminClient_ReqTracClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminClient_ReqTracClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminClient_RequestTracker.Designer.vb">
+      <DependentUpon>AdminClient_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminClient_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_Approver_dashboard.Designer.vb">
+      <DependentUpon>Admission_Approver_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Approver_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_ReqTracClicked_Approver.Designer.vb">
+      <DependentUpon>Admission_ReqTracClicked_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ReqTracClicked_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_ReqTrackApprover.Designer.vb">
+      <DependentUpon>Admission_ReqTrackApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ReqTrackApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_ReqTrackClicked.Designer.vb">
+      <DependentUpon>Admission_ReqTrackClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ReqTrackClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_RequestTracker.Designer.vb">
+      <DependentUpon>Admission_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approvalrelease_RequestHistory.Designer.vb">
+      <DependentUpon>Approvalrelease_RequestHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Approvalrelease_RequestHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApproverRelease_ReqTracClicked.Designer.vb">
+      <DependentUpon>ApproverRelease_ReqTracClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApproverRelease_ReqTracClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApproverRelease_RequestTracker.Designer.vb">
+      <DependentUpon>ApproverRelease_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApproverRelease_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approver_Dashboard_Sirjed.Designer.vb">
+      <DependentUpon>Approver_Dashboard_Sirjed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Approver_Dashboard_Sirjed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="budgetedit.Designer.vb">
+      <DependentUpon>budgetedit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="budgetedit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categorymanagement.Designer.vb">
+      <DependentUpon>categorymanagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="categorymanagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categorymanagementarchive.Designer.vb">
+      <DependentUpon>categorymanagementarchive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="categorymanagementarchive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard_AccountingRelease.Designer.vb">
+      <DependentUpon>Dashboard_AccountingRelease.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_AccountingRelease.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboarsample.Designer.vb">
+      <DependentUpon>dashboarsample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dashboarsample.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admindashboardclient.Designer.vb">
+      <DependentUpon>admindashboardclient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admindashboardclient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApproverDashboard.Designer.vb">
+      <DependentUpon>ApproverDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApproverDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection.vb" />
+    <Compile Include="CreateAccountForm.Designer.vb">
+      <DependentUpon>CreateAccountForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccountForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer.vb" />
+    <Compile Include="dashboardfaculty.Designer.vb">
+      <DependentUpon>dashboardfaculty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardfaculty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dbaccessDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbaccessDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbaccessDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbaccessDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbaccessDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbaccessDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofile1DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofile1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbprofileDataSet7.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbprofileDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_Approver_dashboard.Designer.vb">
+      <DependentUpon>Faculty_Approver_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_Approver_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faculty_ReqTracClicked.Designer.vb">
+      <DependentUpon>Faculty_ReqTracClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_ReqTracClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faculty_ReqTracClicked_Approver.Designer.vb">
+      <DependentUpon>Faculty_ReqTracClicked_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_ReqTracClicked_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faculty_ReqTrackApprover.Designer.vb">
+      <DependentUpon>Faculty_ReqTrackApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_ReqTrackApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faculty_RequestTracker.Designer.vb">
+      <DependentUpon>Faculty_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFaculty_ReqTrackApprover.Designer.vb">
+      <DependentUpon>FFaculty_ReqTrackApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FFaculty_ReqTrackApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeadApproval1_RequestTrackerApprover.Designer.vb">
+      <DependentUpon>HeadApproval1_RequestTrackerApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HeadApproval1_RequestTrackerApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeadApproval1_RequestTrackerr.Designer.vb">
+      <DependentUpon>HeadApproval1_RequestTrackerr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HeadApproval1_RequestTrackerr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeadApprover1_ReqTracClicked_Approver.Designer.vb">
+      <DependentUpon>HeadApprover1_ReqTracClicked_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HeadApprover1_ReqTracClicked_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSO_Approver_dashboard.Designer.vb">
+      <DependentUpon>ITSO_Approver_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ITSO_Approver_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSO_ReqTracClicked.Designer.vb">
+      <DependentUpon>ITSO_ReqTracClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ITSO_ReqTracClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSO_ReqTracClicked_Approver.Designer.vb">
+      <DependentUpon>ITSO_ReqTracClicked_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ITSO_ReqTracClicked_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSO_RequestTracker.Designer.vb">
+      <DependentUpon>ITSO_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ITSO_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSO_RequestTrackerApprover.Designer.vb">
+      <DependentUpon>ITSO_RequestTrackerApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ITSO_RequestTrackerApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingScreen.Designer.vb">
+      <DependentUpon>LoadingScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.vb">
+      <DependentUpon>LoginPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LRC_Approver_dashboard.Designer.vb">
+      <DependentUpon>LRC_Approver_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LRC_Approver_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LRC_ReqTracApprover.Designer.vb">
+      <DependentUpon>LRC_ReqTracApprover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LRC_ReqTracApprover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LRC_ReqTracClicked.Designer.vb">
+      <DependentUpon>LRC_ReqTracClicked.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LRC_ReqTracClicked.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LRC_ReqTracClicked_Approver.Designer.vb">
+      <DependentUpon>LRC_ReqTracClicked_Approver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LRC_ReqTracClicked_Approver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LRC_RequestTracker.Designer.vb">
+      <DependentUpon>LRC_RequestTracker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LRC_RequestTracker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAccounts.Designer.vb">
+      <DependentUpon>ManageAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="officesuppliesarchive.Designer.vb">
+      <DependentUpon>officesuppliesarchive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="officesuppliesarchive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="officesupplyviewer.Designer.vb">
+      <DependentUpon>officesupplyviewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="officesupplyviewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase_Order.Designer.vb">
+      <DependentUpon>Purchase_Order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_Order.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requeshisotryclient.Designer.vb">
+      <DependentUpon>requeshisotryclient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="requeshisotryclient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestFormAdmission.Designer.vb">
+      <DependentUpon>RequestFormAdmission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RequestFormAdmission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestFormFaculty.Designer.vb">
+      <DependentUpon>RequestFormFaculty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RequestFormFaculty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestFormITSO.Designer.vb">
+      <DependentUpon>RequestFormITSO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RequestFormITSO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestFormAccounting.Designer.vb">
+      <DependentUpon>RequestFormAccounting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RequestFormAccounting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requestformLRC.Designer.vb">
+      <DependentUpon>requestformLRC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="requestformLRC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requesthistoryaccounting.Designer.vb">
+      <DependentUpon>requesthistoryaccounting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="requesthistoryaccounting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requesthistoryadmission.Designer.vb">
+      <DependentUpon>requesthistoryadmission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="requesthistoryadmission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requesthistoryitso.Designer.vb">
+      <DependentUpon>requesthistoryitso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="requesthistoryitso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requesthistorylrc.Designer.vb">
+      <DependentUpon>requesthistorylrc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="requesthistorylrc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmittedFormFaculty.Designer.vb">
+      <DependentUpon>SubmittedFormFaculty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubmittedFormFaculty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmittedFormAccounting.Designer.vb">
+      <DependentUpon>SubmittedFormAccounting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubmittedFormAccounting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmittedFormAdmission.Designer.vb">
+      <DependentUpon>SubmittedFormAdmission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubmittedFormAdmission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmittedFormITSO.Designer.vb">
+      <DependentUpon>SubmittedFormITSO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubmittedFormITSO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmittedFormLRC.Designer.vb">
+      <DependentUpon>SubmittedFormLRC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubmittedFormLRC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuperAdminDashboard.Designer.vb">
+      <DependentUpon>SuperAdminDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdminDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Term_and_Cond.Designer.vb">
+      <DependentUpon>Term_and_Cond.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Term_and_Cond.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.vb">
+      <DependentUpon>test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="test.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdashboardaccounting.Designer.vb">
+      <DependentUpon>userdashboardaccounting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userdashboardaccounting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdashboardadmission.Designer.vb">
+      <DependentUpon>userdashboardadmission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userdashboardadmission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdashboardITSO.Designer.vb">
+      <DependentUpon>userdashboardITSO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userdashboardITSO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdashboardlrc.Designer.vb">
+      <DependentUpon>userdashboardlrc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userdashboardlrc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userlogin.Designer.vb">
+      <DependentUpon>Userlogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Userlogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Accounting_Approver_dashboard.resx">
+      <DependentUpon>Accounting_Approver_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting_ReqTracApprover.resx">
+      <DependentUpon>Accounting_ReqTracApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting_ReqTracClicked.resx">
+      <DependentUpon>Accounting_ReqTracClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting_ReqTracClicked_Approver.resx">
+      <DependentUpon>Accounting_ReqTracClicked_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting_RequestTracker.resx">
+      <DependentUpon>Accounting_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminClient_ReqTracClicked.resx">
+      <DependentUpon>AdminClient_ReqTracClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminClient_RequestTracker.resx">
+      <DependentUpon>AdminClient_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_Approver_dashboard.resx">
+      <DependentUpon>Admission_Approver_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_ReqTracClicked_Approver.resx">
+      <DependentUpon>Admission_ReqTracClicked_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_ReqTrackApprover.resx">
+      <DependentUpon>Admission_ReqTrackApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_ReqTrackClicked.resx">
+      <DependentUpon>Admission_ReqTrackClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_RequestTracker.resx">
+      <DependentUpon>Admission_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approvalrelease_RequestHistory.resx">
+      <DependentUpon>Approvalrelease_RequestHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApproverRelease_ReqTracClicked.resx">
+      <DependentUpon>ApproverRelease_ReqTracClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApproverRelease_RequestTracker.resx">
+      <DependentUpon>ApproverRelease_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approver_Dashboard_Sirjed.resx">
+      <DependentUpon>Approver_Dashboard_Sirjed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="budgetedit.resx">
+      <DependentUpon>budgetedit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="categorymanagement.resx">
+      <DependentUpon>categorymanagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="categorymanagementarchive.resx">
+      <DependentUpon>categorymanagementarchive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard_AccountingRelease.resx">
+      <DependentUpon>Dashboard_AccountingRelease.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboarsample.resx">
+      <DependentUpon>dashboarsample.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admindashboardclient.resx">
+      <DependentUpon>admindashboardclient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccountForm.resx">
+      <DependentUpon>CreateAccountForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardfaculty.resx">
+      <DependentUpon>dashboardfaculty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty_Approver_dashboard.resx">
+      <DependentUpon>Faculty_Approver_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty_ReqTracClicked.resx">
+      <DependentUpon>Faculty_ReqTracClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty_ReqTracClicked_Approver.resx">
+      <DependentUpon>Faculty_ReqTracClicked_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty_ReqTrackApprover.resx">
+      <DependentUpon>Faculty_ReqTrackApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty_RequestTracker.resx">
+      <DependentUpon>Faculty_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFaculty_ReqTrackApprover.resx">
+      <DependentUpon>FFaculty_ReqTrackApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeadApproval1_RequestTrackerApprover.resx">
+      <DependentUpon>HeadApproval1_RequestTrackerApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeadApproval1_RequestTrackerr.resx">
+      <DependentUpon>HeadApproval1_RequestTrackerr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeadApprover1_ReqTracClicked_Approver.resx">
+      <DependentUpon>HeadApprover1_ReqTracClicked_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSO_Approver_dashboard.resx">
+      <DependentUpon>ITSO_Approver_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSO_ReqTracClicked.resx">
+      <DependentUpon>ITSO_ReqTracClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSO_ReqTracClicked_Approver.resx">
+      <DependentUpon>ITSO_ReqTracClicked_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSO_RequestTracker.resx">
+      <DependentUpon>ITSO_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSO_RequestTrackerApprover.resx">
+      <DependentUpon>ITSO_RequestTrackerApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApproverDashboard.resx">
+      <DependentUpon>ApproverDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingScreen.resx">
+      <DependentUpon>LoadingScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LRC_Approver_dashboard.resx">
+      <DependentUpon>LRC_Approver_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LRC_ReqTracApprover.resx">
+      <DependentUpon>LRC_ReqTracApprover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LRC_ReqTracClicked.resx">
+      <DependentUpon>LRC_ReqTracClicked.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LRC_ReqTracClicked_Approver.resx">
+      <DependentUpon>LRC_ReqTracClicked_Approver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LRC_RequestTracker.resx">
+      <DependentUpon>LRC_RequestTracker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAccounts.resx">
+      <DependentUpon>ManageAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="officesuppliesarchive.resx">
+      <DependentUpon>officesuppliesarchive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="officesupplyviewer.resx">
+      <DependentUpon>officesupplyviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase_Order.resx">
+      <DependentUpon>Purchase_Order.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requeshisotryclient.resx">
+      <DependentUpon>requeshisotryclient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestFormAdmission.resx">
+      <DependentUpon>RequestFormAdmission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestFormFaculty.resx">
+      <DependentUpon>RequestFormFaculty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestFormITSO.resx">
+      <DependentUpon>RequestFormITSO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestFormAccounting.resx">
+      <DependentUpon>RequestFormAccounting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requestformLRC.resx">
+      <DependentUpon>requestformLRC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requesthistoryaccounting.resx">
+      <DependentUpon>requesthistoryaccounting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requesthistoryadmission.resx">
+      <DependentUpon>requesthistoryadmission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requesthistoryitso.resx">
+      <DependentUpon>requesthistoryitso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requesthistorylrc.resx">
+      <DependentUpon>requesthistorylrc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmittedFormFaculty.resx">
+      <DependentUpon>SubmittedFormFaculty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmittedFormAccounting.resx">
+      <DependentUpon>SubmittedFormAccounting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmittedFormAdmission.resx">
+      <DependentUpon>SubmittedFormAdmission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmittedFormITSO.resx">
+      <DependentUpon>SubmittedFormITSO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmittedFormLRC.resx">
+      <DependentUpon>SubmittedFormLRC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperAdminDashboard.resx">
+      <DependentUpon>SuperAdminDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Term_and_Cond.resx">
+      <DependentUpon>Term_and_Cond.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userdashboardaccounting.resx">
+      <DependentUpon>userdashboardaccounting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userdashboardadmission.resx">
+      <DependentUpon>userdashboardadmission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userdashboardITSO.resx">
+      <DependentUpon>userdashboardITSO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userdashboardlrc.resx">
+      <DependentUpon>userdashboardlrc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userlogin.resx">
+      <DependentUpon>Userlogin.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbaccessDataSet.xsc">
+      <DependentUpon>dbaccessDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbaccessDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbaccessDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbaccessDataSet.xss">
+      <DependentUpon>dbaccessDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbaccessDataSet1.xsc">
+      <DependentUpon>dbaccessDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbaccessDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbaccessDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbaccessDataSet1.xss">
+      <DependentUpon>dbaccessDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbaccessDataSet2.xsc">
+      <DependentUpon>dbaccessDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbaccessDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbaccessDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbaccessDataSet2.xss">
+      <DependentUpon>dbaccessDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofile1DataSet.xsc">
+      <DependentUpon>dbprofile1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofile1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofile1DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofile1DataSet.xss">
+      <DependentUpon>dbprofile1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet.xsc">
+      <DependentUpon>dbprofileDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet.xss">
+      <DependentUpon>dbprofileDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet1.xsc">
+      <DependentUpon>dbprofileDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet1.xss">
+      <DependentUpon>dbprofileDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet2.xsc">
+      <DependentUpon>dbprofileDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet2.xss">
+      <DependentUpon>dbprofileDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet3.xsc">
+      <DependentUpon>dbprofileDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet3.xss">
+      <DependentUpon>dbprofileDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet4.xsc">
+      <DependentUpon>dbprofileDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet4.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet4.xss">
+      <DependentUpon>dbprofileDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet5.xsc">
+      <DependentUpon>dbprofileDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet5.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet5.xss">
+      <DependentUpon>dbprofileDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet6.xsc">
+      <DependentUpon>dbprofileDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet6.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet6.xss">
+      <DependentUpon>dbprofileDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet7.xsc">
+      <DependentUpon>dbprofileDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="dbprofileDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbprofileDataSet7.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbprofileDataSet7.xss">
+      <DependentUpon>dbprofileDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\ExcelDataReader.ExcelDataReaderExtensions.datasource" />
+    <None Include="My Project\DataSources\ExcelDataReader.ExcelDataSetConfiguration.datasource" />
+    <None Include="My Project\DataSources\ExcelDataReader.ExcelDataTableConfiguration.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\21fe6940e966bcff2a1f86fc5ffcbc75340e89f6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FEU CAVITEREAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-aesthetics-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xczsfsffsga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dafsagasg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\371905140_MEET_ROBOT_400px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_processing20191128-24941-zbq3ty.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2757874.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp27578741.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\azxcaaf.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASDASDASDAS.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadasdasd.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zxcbzxbzxbzxvbzxvbzxbv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-dark-minimalism-minimalist-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1b1f0c37d9b760433e9ac38c8dd8b165.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7f8db04f3766f75f5380e0106c5c746b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7f8db04f3766f75f5380e0106c5c746b1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1b1f0c37d9b760433e9ac38c8dd8b1651.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-1.1s-257px-1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbaccess.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbprofile1.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icons8-archive-50.png" />
+    <None Include="Resources\icons8-check-481.png" />
+    <None Include="Resources\Notif Icon1.png" />
+    <None Include="Resources\Notif Icon %284%291.png" />
+    <None Include="Resources\Notif Icon %283%291.png" />
+    <None Include="Resources\Notif Icon %282%291.png" />
+    <None Include="Resources\Notif Icon %285%291.png" />
+    <None Include="Resources\icons8-information-24.png" />
+    <None Include="Resources\icons8-left-arrow-100.png" />
+    <None Include="Resources\icons8-submit-document-100.png" />
+    <None Include="Resources\icons8-check-48.png" />
+    <None Include="Resources\icons8-submit-100.png" />
+    <None Include="Resources\icons8-activity-history-1001.png" />
+    <None Include="Resources\icons8-form-1002.png" />
+    <None Include="Resources\icons8-inventory-100.png" />
+    <None Include="Resources\icons8-manage-96 %282%291.png" />
+    <None Include="Resources\icons8-manage-96 %282%29.png" />
+    <None Include="Resources\icons8-form-1001.png" />
+    <None Include="Resources\icons8-online-package-tracking-1001.png" />
+    <None Include="Resources\icons8-magnifying-glass-100.png" />
+    <None Include="Resources\icons8-online-package-tracking-100.png" />
+    <None Include="Resources\icons8-activity-history-100.png" />
+    <None Include="Resources\icons8-form-100.png" />
+    <None Include="Resources\icons8-view-90.png" />
+    <None Include="Resources\icons8-view-64.png" />
+    <None Include="Resources\icons8-view-301.png" />
+    <None Include="Resources\icons8-manage-100.png" />
+    <None Include="Resources\icons8-manage-96 %281%29.png" />
+    <None Include="Resources\icons8-inventory-management-32 %281%29.png" />
+    <None Include="Resources\icons8-view-30 %281%29.png" />
+    <None Include="Resources\icons8-history-50 %281%29 %281%29.png" />
+    <None Include="Resources\icons8-track-50 %281%29 %281%29.png" />
+    <None Include="Resources\icons8-history-48 %281%29.png" />
+    <None Include="Resources\icons8-home-50 %282%29.png" />
+    <None Include="Resources\icons8-home-50 %281%29.png" />
+    <None Include="Resources\icons8-request-48.png" />
+    <None Include="Resources\icons8-track-50 %281%29.png" />
+    <None Include="Resources\icons8-view-30.png" />
+    <None Include="Resources\icons8-history-50 %281%29.png" />
+    <None Include="Resources\icons8-history-48.png" />
+    <None Include="Resources\icons8-home-50.png" />
+    <None Include="Resources\icons8-sign-in-40658568568.png" />
+    <None Include="Resources\54444.png" />
+    <None Include="Resources\icons8-sign-in-40.png" />
+    <None Include="Resources\icons8-password-50.png" />
+    <None Include="Resources\icons8-id-50.png" />
+    <None Include="Resources\icons8-person-64.png" />
+    <None Include="Resources\icons8-logout-48.png" />
+    <None Include="Resources\icons8-menu-67 %282%29.png" />
+    <None Include="Resources\8666790_list_checklist_icon1.png" />
+    <None Include="Resources\icons8-menu-32.png" />
+    <None Include="Resources\icons8-menu-67 %281%29.png" />
+    <None Include="Resources\icons8-menu-67.png" />
+    <None Include="Resources\icons8-circled-menu-50.png" />
+    <None Include="Resources\icons8-menu-25.png" />
+    <None Include="Resources\8666790_list_checklist_icon.png" />
+    <None Include="Resources\nu-fairview_auto_x2_toned_light_ai3.jpg" />
+    <None Include="Resources\nu-fairview_auto_x2_toned_light_ai2.jpg" />
+    <None Include="Resources\Untitled1.jpeg" />
+    <None Include="Resources\nu-fairview_auto_x2_toned_light_ai1.jpg" />
+    <None Include="Resources\NULOGO5.png" />
+    <None Include="Resources\NULOGO4.png" />
+    <None Include="Resources\NULOGO3.png" />
+    <None Include="Resources\Untitled.jpeg" />
+    <None Include="Resources\hamburger-menu-icon-png-white-10.jpg" />
+    <None Include="Resources\hamburger-menu-icon-png-white-10 %281%29.jpg" />
+    <None Include="Resources\1097115 %284%29.png" />
+    <None Include="Resources\1097115 %283%29.png" />
+    <None Include="Resources\1097115 %281%29.png" />
+    <None Include="Resources\1097115.png" />
+    <None Include="Resources\passwordicon.png" />
+    <None Include="Resources\imageonline-co-transparentimage %281%29.png" />
+    <None Include="Resources\NULOGO2.png" />
+    <None Include="Resources\NULOGO1.png" />
+    <None Include="Resources\NULOGO.png" />
+    <None Include="Resources\nu-fairview_auto_x2_toned_light_ai.jpg" />
+    <None Include="Resources\wp7619905-blue-minimalistic-wallpapers.jpg" />
+    <None Include="Resources\Screenshot 2023-02-26 151742.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
